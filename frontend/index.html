@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Post Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Guest Post Management System</h1>
+
+    <hr>
+
+    <h2>Add New Client</h2>
+
+    <input type="text" id="full_name" placeholder="Full Name"><br><br>
+
+    <input type="email" id="email" placeholder="Email"><br><br>
+
+    <input type="text" id="company_name" placeholder="Company Name"><br><br>
+
+    <input type="text" id="phone" placeholder="Phone"><br><br>
+
+    <button id="addClient">Add Client</button>
+
+    <hr>
+
+    <h2>Clients</h2>
+
+
+<input type="text" id="searchClient" placeholder="Search Client...">
+<button id="searchClientBtn">Search</button>
+
+<br><br>
+
+<button id="loadClients">Load Clients</button>
+
+<br><br>
+
+<table border="1" id="clientTable">
+
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="output">
+
+    </tbody>
+
+</table>
+
+    <hr>
+
+    <h2>Add Order</h2>
+
+    <input type="number" id="client_id" placeholder="Client ID"><br><br>
+
+    <input type="text" id="target_link" placeholder="Target Link"><br><br>
+
+    <input type="text" id="anchor_text" placeholder="Anchor Text"><br><br>
+
+    <input type="number" id="price" placeholder="Price"><br><br>
+
+    <input type="text" id="status" placeholder="Status"><br><br>
+
+    <button id="addOrder">Add Order</button>
+    <hr>
+
+<h2>Orders</h2>
+<input type="text" id="searchOrder" placeholder="Search Order...">
+<button id="searchOrderBtn">Search</button>
+
+<br><br>
+<button id="loadOrders">Load Orders</button>
+
+<br><br>
+
+<table border="1" id="orderTable">
+
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Client ID</th>
+            <th>Target Link</th>
+            <th>Anchor Text</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="orderOutput">
+
+    </tbody>
+
+</table>
+<h2>Update Order</h2>
+
+<input type="number" id="update_order_id" placeholder="Order ID"><br><br>
+
+<input type="text" id="update_target_link" placeholder="New Target Link"><br><br>
+
+<input type="text" id="update_anchor_text" placeholder="New Anchor Text"><br><br>
+
+<input type="number" id="update_price" placeholder="New Price"><br><br>
+
+<input type="text" id="update_status" placeholder="New Status"><br><br>
+
+<button id="updateOrder">Update Order</button>
+
+<hr>
+    <hr>
+
+    <h2>Update Client</h2>
+
+    <input type="number" id="update_client_id" placeholder="Client ID"><br><br>
+
+    <input type="text" id="update_full_name" placeholder="New Full Name"><br><br>
+
+    <input type="email" id="update_email" placeholder="New Email"><br><br>
+
+    <input type="text" id="update_company_name" placeholder="New Company Name"><br><br>
+
+    <input type="text" id="update_phone" placeholder="New Phone"><br><br>
+
+    <button id="updateClient">Update Client</button>
+    <hr>
+
+<h2>Delete Client</h2>
+
+<input type="number" id="delete_client_id" placeholder="Client ID"><br><br>
+
+<button id="deleteClient">Delete Client</button>
+<hr>
+<h2>Add Payment</h2>
+
+
+<input type="number" id="payment_client_id" placeholder="Client ID"><br><br>
+
+<input type="number" id="payment_amount" placeholder="Amount"><br><br>
+
+<select id="payment_status">
+    <option value="Paid">Paid</option>
+    <option value="Pending">Pending</option>
+</select>
+
+<br><br>
+
+<button id="addPayment">Add Payment</button>
+<input type="hidden" id="payment_id">
+
+<button id="updatePayment">Update Payment</button>
+
+<hr>
+
+<h2>Payments</h2>
+
+<input type="text" id="searchPayment" placeholder="Search Payment...">
+
+<button id="searchPaymentBtn">Search</button>
+
+<br><br>
+
+<button id="loadPayments">Load Payments</button>
+
+<br><br>
+
+<table border="1" id="paymentTable">
+
+    <thead>
+        <tr>
+            <th>Payment ID</th>
+            <th>Client ID</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody id="paymentOutput">
+
+    </tbody>
+
+</table>
+
+<hr>
+   
+<hr>
+
+<hr>
+
+<h2 class="dashboard-title">Dashboard</h2>
+
+<div class="dashboard">
+
+    <div class="card client-card">
+        <div class="icon">👥</div>
+        <h3>Total Clients</h3>
+        <p id="totalClients">0</p>
+    </div>
+
+    <div class="card order-card">
+        <div class="icon">📦</div>
+        <h3>Total Orders</h3>
+        <p id="totalOrders">0</p>
+    </div>
+
+    <div class="card payment-card">
+        <div class="icon">💰</div>
+        <h3>Total Payments</h3>
+        <p id="totalPayments">0</p>
+    </div>
+
+    <div class="card revenue-card">
+        <div class="icon">📈</div>
+        <h3>Total Revenue</h3>
+        <p id="totalRevenue">0</p>
+    </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

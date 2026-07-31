@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #444;
+    margin-top: 30px;
+}
+
+input, select {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+/* Dashboard */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+
+.icon {
+    font-size: 40px;
+}
+
+
+.card h3 {
+    color: #555;
+}
+
+
+.card p {
+    font-size: 38px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+.client-card {
+    border-top: 5px solid #2563eb;
+}
+
+.order-card {
+    border-top: 5px solid #16a34a;
+}
+
+.payment-card {
+    border-top: 5px solid #f59e0b;
+}
+
+.revenue-card {
+    border-top: 5px solid #9333ea;
+}
+
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+    .dashboard {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .dashboard {
+        grid-template-columns:1fr;
+    }
+
+}
