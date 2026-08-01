@@ -68,7 +68,7 @@ document.getElementById("loadClients").addEventListener("click", function () {
 
 document.getElementById("loadPayments").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/payments")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/payments")
 
     .then(response => response.json())
 
@@ -77,6 +77,9 @@ document.getElementById("loadPayments").addEventListener("click", function () {
         let output = "";
 
         data.forEach(payment => {
+
+
+
 
             output += `
             <tr>
