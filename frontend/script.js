@@ -2,7 +2,7 @@
 
 document.getElementById("addClient").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/add-client", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-client", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -113,7 +113,7 @@ document.getElementById("loadPayments").addEventListener("click", function () {
 
 document.getElementById("addOrder").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/add-order", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-order", {
 
         method: "POST",
 
@@ -148,7 +148,7 @@ document.getElementById("addOrder").addEventListener("click", function () {
 
 document.getElementById("updateClient").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/update-client", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-client", {
 
         method: "PUT",
 
@@ -181,7 +181,7 @@ document.getElementById("updateClient").addEventListener("click", function () {
 
 document.getElementById("deleteClient").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/delete-client", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-client", {
 
         method: "DELETE",
 
@@ -210,7 +210,7 @@ document.getElementById("deleteClient").addEventListener("click", function () {
 
 document.getElementById("addPayment").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/add-payment", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-payment", {
 
         method: "POST",
 
@@ -291,7 +291,7 @@ function deleteClient(client_id) {
 
     if(confirmDelete){
 
-        fetch("http://127.0.0.1:5000/delete-client", {
+        fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-client", {
 
             method: "DELETE",
 
@@ -421,7 +421,7 @@ function deleteOrder(order_id) {
 
     if(confirmDelete){
 
-        fetch("http://127.0.0.1:5000/delete-order", {
+        fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-order", {
 
             method: "DELETE",
 
@@ -484,7 +484,7 @@ function editOrder(order_id) {
 
 document.getElementById("updateOrder").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/update-order", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-order", {
 
         method: "PUT",
 
@@ -521,7 +521,7 @@ document.getElementById("searchClientBtn").addEventListener("click", function ()
 
     const keyword = document.getElementById("searchClient").value;
 
-    fetch(`http://127.0.0.1:5000/search-client/${keyword}`)
+    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-client/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -565,7 +565,7 @@ document.getElementById("searchOrderBtn").addEventListener("click", function () 
 
     const keyword = document.getElementById("searchOrder").value;
 
-    fetch(`http://127.0.0.1:5000/search-order/${keyword}`)
+    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-order/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -606,7 +606,7 @@ document.getElementById("searchPaymentBtn").addEventListener("click", function (
 
     const keyword = document.getElementById("searchPayment").value;
 
-    fetch(`http://127.0.0.1:5000/search-payment/${keyword}`)
+    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-payment/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -643,7 +643,7 @@ function deletePayment(payment_id) {
         return;
     }
 
-    fetch("http://127.0.0.1:5000/delete-payment", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-payment", {
 
         method: "DELETE",
 
@@ -672,7 +672,7 @@ function deletePayment(payment_id) {
 
 function editPayment(payment_id) {
 
-    fetch("http://127.0.0.1:5000/payments")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/payments")
 
     .then(response => response.json())
 
@@ -701,7 +701,7 @@ function editPayment(payment_id) {
 
 document.getElementById("updatePayment").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/update-payment", {
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-payment", {
 
         method: "PUT",
 
