@@ -25,7 +25,7 @@ document.getElementById("addClient").addEventListener("click", function () {
 
 document.getElementById("loadClients").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/clients")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/clients")
 
     .then(response => response.json())
 
@@ -245,7 +245,7 @@ document.getElementById("addPayment").addEventListener("click", function () {
 
 function loadDashboard() {
 
-    fetch("http://127.0.0.1:5000/dashboard")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/dashboard")
 
     .then(response => response.json())
 
@@ -322,7 +322,7 @@ function deleteClient(client_id) {
 
 function editClient(client_id) {
 
-    fetch("http://127.0.0.1:5000/clients")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/clients")
 
     .then(response => response.json())
 
@@ -354,7 +354,7 @@ function editClient(client_id) {
 
 document.getElementById("loadOrders").addEventListener("click", function () {
 
-    fetch("http://127.0.0.1:5000/orders")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/orders")
 
     .then(response => response.json())
 
@@ -452,7 +452,7 @@ function deleteOrder(order_id) {
 
 function editOrder(order_id) {
 
-    fetch("http://127.0.0.1:5000/orders")
+    fetch("https://guest-postmanagementsystem-production.up.railway.app/orders")
 
     .then(response => response.json())
 
