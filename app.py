@@ -6,11 +6,11 @@ import psycopg2
 app = Flask(__name__)
 CORS(app)
 
-DATABASE_URL = os.environ.get("DATABASE_URL")
-
 conn = psycopg2.connect(
-    DATABASE_URL,
-    sslmode="require"
+    host="localhost",
+    database="guestpost_db",
+    user="postgres",
+    password="Laiba@1122"
 )
 
 
