@@ -5,13 +5,14 @@ import psycopg2
 app = Flask(__name__)
 CORS(app)
 
-conn = psycopg2.connect(
-    host="localhost",
-    database="guestpost_db",
-    user="postgres",
-    password="Laiba@1122"
-)
+import os
 
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+conn = psycopg2.connect(
+    DATABASE_URL,
+    sslmode="require"
+)
 
 @app.route("/")
 def home():
@@ -123,4 +124,8 @@ def get_orders():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
