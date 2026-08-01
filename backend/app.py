@@ -121,6 +121,30 @@ def get_orders():
         })
 
     return jsonify(orders)
+@app.route("/dashboard")
+def dashboard():
+    cur = conn.cursor()
+
+    cur.execute("SELECT COUNT(*) FROM clients")
+    total_clients = cur.fetchone()[0]
+
+    cur.execute("SELECT COUNT(*) FROM orders")
+    total_orders = cur.fetchone()[0]
+
+    cur.execute("SELECT COUNT(*) FROM payments")
+    total_payments = cur.fetchone()[0]
+
+    cur.execute("SELECT COALESCE(SUM(amount), 0) FROM payments")
+    total_revenue = float(cur.fetchone()[0])
+
+    cur.close()
+
+    return jsonify({
+        "total_clients": total_clients,
+        "total_orders": total_orders,
+        "total_payments": total_payments,
+        "total_revenue": total_revenue
+    })
 
 
 if __name__ == "__main__":
