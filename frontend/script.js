@@ -2,7 +2,7 @@
 
 document.getElementById("addClient").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-client", {
+    fetch(`${API_BASE_URL}/add-client`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -25,7 +25,7 @@ document.getElementById("addClient").addEventListener("click", function () {
 
 document.getElementById("loadClients").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/clients")
+    fetch(`${API_BASE_URL}/clients`)
 
     .then(response => response.json())
 
@@ -68,7 +68,7 @@ document.getElementById("loadClients").addEventListener("click", function () {
 
 document.getElementById("loadPayments").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/payments")
+    fetch(`${API_BASE_URL}/payments`)
 
     .then(response => response.json())
 
@@ -77,9 +77,6 @@ document.getElementById("loadPayments").addEventListener("click", function () {
         let output = "";
 
         data.forEach(payment => {
-
-
-
 
             output += `
             <tr>
@@ -113,7 +110,7 @@ document.getElementById("loadPayments").addEventListener("click", function () {
 
 document.getElementById("addOrder").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-order", {
+    fetch(`${API_BASE_URL}/add-order`, {
 
         method: "POST",
 
@@ -148,7 +145,7 @@ document.getElementById("addOrder").addEventListener("click", function () {
 
 document.getElementById("updateClient").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-client", {
+    fetch(`${API_BASE_URL}/update-client`, {
 
         method: "PUT",
 
@@ -181,7 +178,7 @@ document.getElementById("updateClient").addEventListener("click", function () {
 
 document.getElementById("deleteClient").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-client", {
+    fetch(`${API_BASE_URL}/delete-client`, {
 
         method: "DELETE",
 
@@ -210,7 +207,7 @@ document.getElementById("deleteClient").addEventListener("click", function () {
 
 document.getElementById("addPayment").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/add-payment", {
+    fetch(`${API_BASE_URL}/add-payment`, {
 
         method: "POST",
 
@@ -245,7 +242,7 @@ document.getElementById("addPayment").addEventListener("click", function () {
 
 function loadDashboard() {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/dashboard")
+    fetch(`${API_BASE_URL}/dashboard`)
 
     .then(response => response.json())
 
@@ -291,7 +288,7 @@ function deleteClient(client_id) {
 
     if(confirmDelete){
 
-        fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-client", {
+        fetch(`${API_BASE_URL}/delete-client`, {
 
             method: "DELETE",
 
@@ -322,7 +319,7 @@ function deleteClient(client_id) {
 
 function editClient(client_id) {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/clients")
+    fetch(`${API_BASE_URL}/clients`)
 
     .then(response => response.json())
 
@@ -354,7 +351,7 @@ function editClient(client_id) {
 
 document.getElementById("loadOrders").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/orders")
+    fetch(`${API_BASE_URL}/orders`)
 
     .then(response => response.json())
 
@@ -421,7 +418,7 @@ function deleteOrder(order_id) {
 
     if(confirmDelete){
 
-        fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-order", {
+        fetch(`${API_BASE_URL}/delete-order`, {
 
             method: "DELETE",
 
@@ -452,7 +449,7 @@ function deleteOrder(order_id) {
 
 function editOrder(order_id) {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/orders")
+    fetch(`${API_BASE_URL}/orders`)
 
     .then(response => response.json())
 
@@ -484,7 +481,7 @@ function editOrder(order_id) {
 
 document.getElementById("updateOrder").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-order", {
+    fetch(`${API_BASE_URL}/update-order`, {
 
         method: "PUT",
 
@@ -521,7 +518,7 @@ document.getElementById("searchClientBtn").addEventListener("click", function ()
 
     const keyword = document.getElementById("searchClient").value;
 
-    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-client/${keyword}`)
+    fetch(`${API_BASE_URL}/search-client/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -565,7 +562,7 @@ document.getElementById("searchOrderBtn").addEventListener("click", function () 
 
     const keyword = document.getElementById("searchOrder").value;
 
-    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-order/${keyword}`)
+    fetch(`${API_BASE_URL}/search-order/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -606,7 +603,7 @@ document.getElementById("searchPaymentBtn").addEventListener("click", function (
 
     const keyword = document.getElementById("searchPayment").value;
 
-    fetch(`https://guest-postmanagementsystem-production.up.railway.app/search-payment/${keyword}`)
+    fetch(`${API_BASE_URL}/search-payment/${keyword}`)
         .then(response => response.json())
         .then(data => {
 
@@ -643,7 +640,7 @@ function deletePayment(payment_id) {
         return;
     }
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/delete-payment", {
+    fetch(`${API_BASE_URL}/delete-payment`, {
 
         method: "DELETE",
 
@@ -672,7 +669,7 @@ function deletePayment(payment_id) {
 
 function editPayment(payment_id) {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/payments")
+    fetch(`${API_BASE_URL}/payments`)
 
     .then(response => response.json())
 
@@ -701,7 +698,7 @@ function editPayment(payment_id) {
 
 document.getElementById("updatePayment").addEventListener("click", function () {
 
-    fetch("https://guest-postmanagementsystem-production.up.railway.app/update-payment", {
+    fetch(`${API_BASE_URL}/update-payment`, {
 
         method: "PUT",
 
